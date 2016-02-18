@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/sky_blue"
+    tools:context="com.weatherreport.SearchCityActivity">
+
+    <include
+        android:id="@+id/tbSearch"
+        layout="@layout/toolbar"/>
+
+    <com.weatherreport.Adapters.MultiSelectSpinner
+        android:id="@+id/spinnerCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border"
+        android:spinnerMode="dropdown"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/tvSearch"
+        android:textSize="14sp"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border"
+        android:layout_gravity="center_horizontal|center_vertical"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvSearch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>
