@@ -1,0 +1,161 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/sky_blue"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:id="@+id/rvMain">
+
+<include
+    android:id="@+id/tbMain"
+    layout="@layout/toolbar"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp"
+        android:layout_below="@+id/tbMain"
+        android:background="@drawable/border">
+
+       <RelativeLayout
+           android:id="@+id/rlReport"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+           >
+
+            <TextView
+                android:id="@+id/tvDateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"/>
+
+            <ImageView
+                android:id="@+id/ivWeathImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvDateTime"/>
+
+            <TextView
+                android:id="@+id/tvCityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_alignParentTop="true"/>
+
+            <TextView
+                android:id="@+id/tvWethDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/tvCityName"/>
+            <TextView
+                android:id="@+id/txtTempreture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvWethDesc"
+                android:text="Tempreture:"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtMax"
+                style="@style/txtview_weather"
+                android:text="Max:"
+                android:layout_below="@+id/txtTempreture"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvMaxTemp"
+                style="@style/txtview_weather"
+                android:text=""
+                android:layout_below="@+id/txtTempreture"
+                android:layout_toRightOf="@+id/txtMax"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/txtMin"
+                style="@style/txtview_weather"
+                android:text="Min:"
+                android:layout_below="@+id/txtMax"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvMinTemp"
+                style="@style/txtview_weather"
+                android:text=""
+                android:layout_below="@+id/txtMax"
+                android:layout_toRightOf="@+id/txtMin"
+                android:layout_marginLeft="10dp"/>
+
+
+            <TextView
+                android:id="@+id/txtDay"
+                style="@style/txtview_weather"
+                android:text="Day:"
+                android:layout_toLeftOf="@+id/tvDayTemp"
+                android:layout_below="@+id/txtTempreture"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvDayTemp"
+                style="@style/txtview_weather"
+                android:text=""
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/txtTempreture"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/txtNight"
+                style="@style/txtview_weather"
+                android:text="Night:"
+                android:layout_toLeftOf="@+id/tvNightTemp"
+                android:layout_below="@+id/txtMax"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvNightTemp"
+                style="@style/txtview_weather"
+                android:text=""
+                android:layout_below="@+id/txtMax"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"/>
+
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tvNoGps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Turn on GPS to get current city report."
+            android:visibility="gone"/>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvNext14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="14 Days Report.."
+        android:background="@drawable/border"/>
+
+
+     <com.db.chart.view.LineChartView
+        android:id="@+id/linechart"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+</RelativeLayout>
